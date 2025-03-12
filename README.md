@@ -21,7 +21,7 @@ Chaque fois qu'il y a une question y répondre dans le fichier de réponse que v
 1. Configurez le repository pour que personne ne puisse push directement sur la branche `main`.
 2. Pour tester, essayez d'ajouter un commit modifiant un fichier directement sur la branche `main`.
 
-_Question:
+Question:
 A) Pourquoi est ce important d'empécher de modifier directement la branche main ?
 
 
