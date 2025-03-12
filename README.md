@@ -46,6 +46,8 @@ D) Votre client est la CMA/CGM et vous avez développé une application de gesti
 Vous avez livré la version 4.2 la semaine dernière et le client se rend compte en catastrophe qu’il y a un bug sur la gestion du nombre de conteneur sur l’application. Il vous demande en urgence absolue de corriger ce bug et de livrer à nouveau une version patché nommé 4.21.
 Décrire les étapes entre la demande du client et la livraison de la version 4.21 d’une part sans la mise en place de CI/CD puis dans le cas où la CI/CD est déjà en place. (On livre la version le plus vite possible mais on veille cette fois ci à bien tester l’application pour ne pas décevoir à nouveau le client avec un nouveau bug). A votre avis, combien de temps cela a permis de gagner ?
 
+E) En quoi l'intégration de sonar dans la CI est intéressant pour un projet ?
+
 ## Partie 3 - Code Quality (Bonus)
 
 2. Créez une nouvelle branche + merge request
