@@ -38,3 +38,12 @@ package-job:
     - main
   needs:
     - test-job
+  sonar-job:
+  stage: sonar
+  script:
+    - mvn sonar:sonar -Dsonar.projectKey=<PROJECT_KEY> -Dsonar.organization=<ORGANIZATION> -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
+  only:
+    - merge_requests
+    - main
+  needs:
+    - package-job
