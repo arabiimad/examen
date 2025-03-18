@@ -1,0 +1,40 @@
+image: maven:3-eclipse-temurin-21
+
+stages:
+  - compile
+  - test
+  - package
+
+# Job de compilation
+compile-job:
+  stage: compile
+  script:
+    - mvn clean compile
+  only:
+    - merge_requests
+    - main
+
+# Job de test
+test-job:
+  stage: test
+  script:
+    - mvn test
+  only:
+    - merge_requests
+    - main
+  needs:
+    - compile-job
+
+# Job de packaging (FatJar)
+package-job:
+  stage: package
+  script:
+    - mvn package -DskipTests
+  artifacts:
+    paths:
+      - target/*.jar
+  only:
+    - merge_requests
+    - main
+  needs:
+    - test-job
