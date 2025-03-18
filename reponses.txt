@@ -1,0 +1,58 @@
+# Réponses aux questions d'Examen
+
+Question A :
+Pourquoi est-il important d'empêcher de modifier directement la branche main ?
+
+Réponse : Il est important de protéger la branche main pour garantir que tout code ajouté à cette branche passe par une Merge Request. Cela permet de réviser le code, d'effectuer des tests et de s'assurer qu'il ne casse pas l'application. De plus, cela prévient les erreurs humaines et garantit que les modifications respectent les bonnes pratiques de développement.
+
+
+Question B :
+Que fait le fichier .gitlab-ci.yml par défaut ? Quelles sont les jobs qui sont lancés et que font-ils ?
+
+Réponse : Le fichier .gitlab-ci.yml définit un pipeline CI/CD en plusieurs étapes :
+
+*Compilation (compile-job) : Compile le projet avec Maven.
+
+*Tests (test-job) : Exécute les tests unitaires avec Maven.
+
+*Packaging (package-job) : Crée un fichier JAR (FatJar) sans exécuter les tests (-DskipTests).
+
+Les jobs sont exécutés dans l'ordre suivant : compilation -> tests -> packaging.
+
+
+Question C:
+Explique avec tes propres mots ce qu’est le DevOps et pourquoi il est important d’intégrer le DevOps aux gros projets d’entreprise ?
+Réponse : Le DevOps est une culture qui combine le développement (Dev) et les opérations (Ops) pour créer une approche fluide et continue du cycle de vie des applications. DevOps vise à automatiser le déploiement, les tests et l'intégration, réduisant ainsi les erreurs humaines et augmentant la rapidité des mises en production.
+
+Pourquoi l'intégrer aux gros projets ?
+
+*Automatisation : Réduit les erreurs manuelles et augmente la rapidité de livraison.
+
+*Collaboration : Favorise une meilleure collaboration entre les équipes de développement et les équipes d'opérations.
+
+*Stabilité et fiabilité : Permet de livrer des applications de manière plus fiable et plus rapide.
+
+
+Question D:
+Étapes entre la demande du client et la livraison de la version 4.21 sans et avec CI/CD
+Sans CI/CD :
+
+1.Le client signale un bug urgent.
+2.Le développeur applique le correctif dans une branche locale.
+3.Les tests sont effectués manuellement.
+4.Le build et le déploiement sont effectués manuellement.
+5.Le déploiement sur production est effectué.
+
+Avec CI/CD :
+
+1.Le client signale un bug urgent.
+2.Le développeur applique le correctif dans une branche.
+3.Une Merge Request est créée, ce qui déclenche le pipeline CI/CD pour compiler, tester et créer un package.
+4.Le déploiement est effectué automatiquement sur un environnement de staging et sur la production si les tests sont réussis.
+
+Gain de temps : L'intégration de CI/CD permet de gagner plusieurs heures (voire une journée) en automatisant les tests, le packaging et le déploiement, réduisant ainsi les risques d'erreurs humaines.
+
+
+
+Question E En quoi l'intégration de Sonar dans la CI est intéressante pour un projet ?
+Réponse : L'intégration de Sonar dans le pipeline CI permet d'analyser automatiquement la qualité du code à chaque modification. Elle détecte les erreurs, vulnérabilités et mauvaises pratiques de codage, garantissant ainsi que le code respecte des standards de qualité avant d'atteindre la production. Cela permet de maintenir un code propre, cohérent et sécurisé tout au long du cycle de développement.
