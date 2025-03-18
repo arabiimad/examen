@@ -4,6 +4,7 @@ stages:
   - compile
   - test
   - package
+  - sonar
 
 # Job de compilation
 compile-job:
@@ -38,10 +39,12 @@ package-job:
     - main
   needs:
     - test-job
-  sonar-job:
+
+# Job d'analyse Sonar
+sonar-job:
   stage: sonar
   script:
-    - mvn sonar:sonar -Dsonar.projectKey=<PROJECT_KEY> -Dsonar.organization=<ORGANIZATION> -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
+    - mvn sonar:sonar -Dsonar.projectKey=arabiimad_examen -Dsonar.organization=arabiimad -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
   only:
     - merge_requests
     - main
